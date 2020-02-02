@@ -1,5 +1,7 @@
 @import 'scss/mixins.scss';
-// @import 'scss/reset.scss';
+@import 'scss/reset.scss';
 @import 'scss/base.scss';
 @import 'scss/typography.scss';
 @import 'scss/componentStyles/filterList.scss';
+@import 'scss/componentStyles/table.scss';
+@import 'scss/componentStyles/loader.scss';

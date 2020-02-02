@@ -1,19 +1,9 @@
 // COLOR VARIABLES
-$color-primary-bright: #01d3fb;
-$color-primary: #01b7da;
-$color-secondary: #016a7e;
-$color-accent: #65ff00;
-$main-gradient: linear-gradient(
-  to bottom,
-  $color-primary-bright,
-  $color-secondary
-);
-$btn-gradient: linear-gradient(to bottom, #d4d4d4, #808080);
+$color-dark: rgb(44, 44, 44);
+$color-secondary: rgb(68, 68, 68);
 
 $color-black: #0f0f0f;
 $color-white: #fff;
-
-$font-shadow: 2px 3px 7px rgba(0, 0, 0, 0.3);
 
 // GOOGLE FONT
 @import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:700i&display=swap');
@@ -45,9 +35,26 @@ body {
   font-weight: 700;
   font-style: italic;
   position: relative;
-  font-size: 1.6rem;
 }
 
 body * {
   font-size: 1rem;
+}
+
+.App {
+  text-align: left;
+  font-size: 0.7rem;
+  background-color: rgb(15, 75, 128);
+  min-height: 100vh;
+}
+
+.App-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  margin: 0 auto;
+  overflow: scroll;
 }

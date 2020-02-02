@@ -1,0 +1,27 @@
+table {
+  position: relative;
+  background-color: $color-secondary;
+  border-collapse: separate;
+  border-spacing: 2px;
+
+  th,
+  td,
+  tr {
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    background-color: $color-black;
+  }
+
+  tr:nth-of-type(odd) {
+    background-color: $color-black;
+  }
+
+  tr:nth-of-type(even) {
+    background-color: $color-dark;
+  }
+}

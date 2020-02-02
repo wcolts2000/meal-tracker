@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { csv } from 'd3';
-import './App.css';
 import './styles.scss';
 
 import FoodTable from './components/FoodTable';
