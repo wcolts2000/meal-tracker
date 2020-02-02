@@ -1,0 +1,16 @@
+@mixin phone-only {
+    @media (max-width: 600px) { @content; }
+  }
+@mixin tablet-landscape {
+  @media (max-width: 900px) { @content; }
+}
+@mixin desktop {
+  @media (max-width: 1200px) { @content; }
+}
+@mixin big-desktop {
+  @media (max-width: 1800px) { @content; }
+}
+
+@mixin background-gradient($opacity) {
+  background: linear-gradient(to bottom, rgba($color-primary-bright, $opacity), rgba($color-secondary, $opacity));
+}

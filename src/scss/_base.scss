@@ -1,0 +1,53 @@
+// COLOR VARIABLES
+$color-primary-bright: #01d3fb;
+$color-primary: #01b7da;
+$color-secondary: #016a7e;
+$color-accent: #65ff00;
+$main-gradient: linear-gradient(
+  to bottom,
+  $color-primary-bright,
+  $color-secondary
+);
+$btn-gradient: linear-gradient(to bottom, #d4d4d4, #808080);
+
+$color-black: #0f0f0f;
+$color-white: #fff;
+
+$font-shadow: 2px 3px 7px rgba(0, 0, 0, 0.3);
+
+// GOOGLE FONT
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:700i&display=swap');
+
+// GLOBAL STYLES
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Barlow Condensed', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-style: italic;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+body * {
+  font-size: 1rem;
+}

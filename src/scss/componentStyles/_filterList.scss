@@ -1,0 +1,25 @@
+#filterList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 50%;
+  color: white;
+
+  label {
+    width: 100%;
+  }
+
+  input,
+  button {
+    padding: 0.5rem;
+  }
+
+  input {
+    width: 80%;
+  }
+
+  button {
+    width: 20%;
+  }
+}
