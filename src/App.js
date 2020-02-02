@@ -9,20 +9,36 @@ import FilterList from './components/FilterList';
 function App() {
   const [loading, setLoading] = useState(true);
   const [nutrients, setNutrients] = useState([]);
-  const [searchResult, setSearchResult] = useState([]);
+  const [filterList, setFilterList] = useState([]);
+  const [filterInput, setFilterInput] = useState({ searchInput: '' });
+
   useEffect(() => {
     csv('food-nutritional-values.csv').then(data => {
-      console.log('***DATA***', data);
       setLoading(false);
       setNutrients(data);
+      setFilterList(data);
     });
   }, []);
 
+  const filterFoods = () => {
+    const filteredResult = nutrients.filter(food =>
+      food['shrt_desc']
+        .toLowerCase()
+        .includes(filterInput.searchInput.toLowerCase())
+    );
+    setFilterList(filteredResult);
+  };
+
+  const handleInput = ({ target: { name, value } }) => {
+    console.log(name, value);
+    setFilterInput({ [name]: value });
+    filterFoods();
+  };
   return (
     <div className="App">
-      <FilterList />
+      <FilterList handleInput={handleInput} filterInput={filterInput} />
       <div className="App-container">
-        {loading ? <Loader /> : <FoodTable nutrients={nutrients} />}
+        {loading ? <Loader /> : <FoodTable nutrients={filterList} />}
       </div>
     </div>
   );

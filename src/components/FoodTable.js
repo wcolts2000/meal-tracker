@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function FoodTable({ nutrients }) {
   return (
@@ -42,3 +43,7 @@ export default function FoodTable({ nutrients }) {
     </table>
   );
 }
+
+FoodTable.propTypes = {
+  nutrients: PropTypes.array.isRequired
+};
