@@ -1,23 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
+import { csv } from 'd3';
 import './App.css';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  const [nutrients, setNutrients] = useState([]);
+  useEffect(() => {
+    csv('abbrev-food-nutritional-values-QueryResult.csv').then(data => {
+      console.log('***DATA***', data);
+      setLoading(false);
+      setNutrients(data);
+    });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          {loading ? (
+            <>
+              <img src={logo} className="App-logo" alt="logo" />
+              <p>Loading...</p>
+            </>
+          ) : (
+            <p>{JSON.stringify(nutrients)}</p>
+          )}
+        </div>
       </header>
     </div>
   );
