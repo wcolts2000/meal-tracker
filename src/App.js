@@ -30,7 +30,6 @@ function App() {
   };
 
   const handleInput = ({ target: { name, value } }) => {
-    console.log(name, value);
     setFilterInput({ [name]: value });
     filterFoods();
   };
@@ -38,7 +37,14 @@ function App() {
     <div className="App">
       <FilterList handleInput={handleInput} filterInput={filterInput} />
       <div className="App-container">
-        {loading ? <Loader /> : <FoodTable nutrients={filterList} />}
+        {loading ? (
+          <Loader />
+        ) : (
+          <FoodTable
+            nutrients={filterList}
+            filterInput={filterInput.searchInput}
+          />
+        )}
       </div>
     </div>
   );
