@@ -25,7 +25,7 @@ export default function FoodTable({ nutrients, filterInput }) {
         {filterInput.length > 0
           ? nutrients.map((food, i) => (
               <tr key={i}>
-                <td>{food.shrt_desc}</td>
+                <td>{food.shrt_desc.replace(/,/g, ', ')}</td>
                 <td>{food.energ_kcal}</td>
                 <td>{food.protein_g}</td>
                 <td>{food.carbohydrt_g}</td>

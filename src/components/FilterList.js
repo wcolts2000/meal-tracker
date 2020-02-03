@@ -11,6 +11,7 @@ export default function FilterList({ handleInput, filterInput }) {
         name="searchInput"
         onChange={handleInput}
         value={filterInput.searchInput}
+        autoFocus
       />
     </form>
   );
